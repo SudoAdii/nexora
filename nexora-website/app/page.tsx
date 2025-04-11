@@ -77,7 +77,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            The Fastest
+            The Fastest WAY TO TRADE
           </motion.h2>
         </motion.div>
 
