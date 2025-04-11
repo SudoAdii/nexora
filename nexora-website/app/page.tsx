@@ -25,14 +25,15 @@ export default function Home() {
         className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300 ${
           scrollY > 10 ? "backdrop-blur-md bg-black/30 border-b border-nexora-green/10" : ""
         }`}
+        role="navigation"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image src="/images/logo-icon.png" alt="Nexora Logo" width={24} height={24} className="w-6 h-6" />
+            <Image src="/images/logo-icon.png" alt="Nexora Logo" width={24} height={24} />
             <span className="text-nexora-green text-xl font-semibold glow-text-sm">NEXORA</span>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
             {["features", "community", "roadmap", "terms", "docs"].map((item) => (
               <Link
                 key={item}
@@ -53,17 +54,17 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="z-10"
         >
           <motion.h1
             className="text-7xl md:text-9xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-nexora-green via-white to-nexora-green drop-shadow-[0_0_20px_#00ff9d] blur-[0.2px]"
-            initial={{ scale: 0.9 }}
+            initial={{ scale: 0.95 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
@@ -80,14 +81,14 @@ export default function Home() {
           </motion.h2>
         </motion.div>
 
-        {/* Decorative Images */}
+        {/* Hero Decorations */}
         <motion.div
           className="absolute top-1/4 left-10 opacity-50"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 0.5, x: 0 }}
           transition={{ delay: 1, duration: 1 }}
         >
-          <Image src="/images/chrome-extension-left.png" alt="Chrome Left" width={150} height={150} className="drop-shadow-[0_0_20px_#00ff9d50]" />
+          <Image src="/images/chrome-extension-left.png" alt="Extension Left" width={150} height={150} className="drop-shadow-[0_0_20px_#00ff9d50]" />
         </motion.div>
 
         <motion.div
@@ -96,10 +97,10 @@ export default function Home() {
           animate={{ opacity: 0.5, x: 0 }}
           transition={{ delay: 1, duration: 1 }}
         >
-          <Image src="/images/chrome-extension-right.png" alt="Chrome Right" width={150} height={150} className="drop-shadow-[0_0_20px_#00ff9d50]" />
+          <Image src="/images/chrome-extension-right.png" alt="Extension Right" width={150} height={150} className="drop-shadow-[0_0_20px_#00ff9d50]" />
         </motion.div>
 
-        {/* Animated Diamond */}
+        {/* Animated Element */}
         <motion.div
           className="absolute bottom-10 left-10 w-16 h-16 border-2 border-nexora-green rounded-md"
           animate={{
@@ -114,7 +115,7 @@ export default function Home() {
         />
       </section>
 
-      {/* Features Section */}
+      {/* Features */}
       <motion.section
         id="features"
         className="py-20 px-6 min-h-screen"
@@ -127,25 +128,13 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-nexora-green mb-12 glow-text-sm">Features</h2>
           <div className="grid md:grid-cols-2 gap-10">
             {[
-              {
-                title: "Lightning Fast Performance",
-                text: "Experience unmatched speed and efficiency with our optimized platform.",
-              },
-              {
-                title: "Seamless Integration",
-                text: "Integrate with tools easily through our comprehensive API and extension system.",
-              },
-              {
-                title: "Advanced Security",
-                text: "Your data is protected with cutting-edge encryption and protocols.",
-              },
-              {
-                title: "Intuitive Interface",
-                text: "A clean, modern UI that lets you focus on what matters.",
-              },
-            ].map((feature, index) => (
+              { title: "Lightning Fast Performance", text: "Experience unmatched speed and efficiency with our optimized platform." },
+              { title: "Seamless Integration", text: "Integrate easily through our powerful APIs and extension support." },
+              { title: "Advanced Security", text: "Your data stays safe with state-of-the-art encryption protocols." },
+              { title: "Intuitive Interface", text: "A modern interface that keeps you focused and in control." },
+            ].map((feature, i) => (
               <div
-                key={index}
+                key={i}
                 className="bg-white/5 backdrop-blur-sm border border-nexora-green/20 hover:border-nexora-green/60 p-8 rounded-2xl shadow-lg transition-all duration-300 hover:scale-[1.02]"
               >
                 <h3 className="text-2xl font-semibold mb-4 text-white">{feature.title}</h3>
@@ -156,14 +145,11 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Other Sections like Community, Roadmap... (same style) */}
-      {/* Keep existing structure, apply similar modernizations as above */}
-
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-nexora-green/20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-2 mb-6 md:mb-0">
-            <Image src="/images/logo-icon.png" alt="Nexora Logo" width={24} height={24} className="w-6 h-6" />
+            <Image src="/images/logo-icon.png" alt="Nexora Logo" width={24} height={24} />
             <span className="text-nexora-green text-xl font-medium glow-text-sm">NEXORA</span>
           </div>
 
@@ -193,16 +179,6 @@ export default function Home() {
           © {new Date().getFullYear()} Nexora. All rights reserved.
         </div>
       </footer>
-
-      {/* Optional Scroll-To-Top Button */}
-      {/* 
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-6 right-6 p-3 bg-nexora-green text-black rounded-full shadow-lg hover:scale-110 transition-transform"
-        >
-          ↑
-        </button>
-      */}
     </div>
   )
 }
