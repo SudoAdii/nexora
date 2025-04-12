@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=320, initial-scale=1.0">
   <title>Analysis Report - Noxira</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d9a56a1c.js" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
@@ -13,27 +13,16 @@
       font-family: 'Inter', sans-serif;
     }
 
-html, body {
-  width: 320px;
-  min-width: 320px;
-  height: 520px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #0e0e0e, #121212);
-  background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  box-sizing: border-box;
-}
-
+    body {
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #0e0e0e, #121212);
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
 
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
@@ -157,8 +146,6 @@ html, body {
   </style>
 </head>
 <body>
-  <div style="width: 320px; height: 1px;">
-
 
   <img src="https://noxirabot.vercel.app/assets/img/logo.svg" alt="Logo" class="logo">
   <div class="title">NOXIRA A.I Report</div>
@@ -294,6 +281,6 @@ html, body {
       `;
     }
   </script>
-</div>
+
 </body>
 </html>
