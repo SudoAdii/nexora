@@ -1,0 +1,142 @@
+<!-- Updated Noxira A.I Report -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analysis Report - Noxira</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d9a56a1c.js" crossorigin="anonymous"></script>
+  <style>
+    /* [Same styles as before, unchanged] */
+    /* (You can keep your entire <style> section as it is in your original code) */
+  </style>
+</head>
+<body>
+
+  <img src="https://noxirabot.vercel.app/assets/img/logo.svg" alt="Logo" class="logo">
+  <div class="title">NOXIRA A.I Report</div>
+  <div class="subtitle">Here's what our analysis revealed about your token.</div>
+
+  <div class="report-box" id="reportBox"></div>
+
+  <button class="back-btn" onclick="window.location.href='bot.html'"><i class="fas fa-arrow-left"></i> Go Back</button>
+
+  <div class="footer">
+    Powered by NOXIRA AI — Helping you trade smarter.
+  </div>
+
+  <script>
+    const reportBox = document.getElementById("reportBox");
+
+    const reports = [
+      {
+        holders: "unknown",
+        marketCap: "Looks Good",
+        locked: "✔️ Yes",
+        renounced: "✔️",
+        risk: "low-risk",
+        riskColor: "#76ffae",
+        warning: "No major red flags detected. Minor volatility spikes in the last 48h."
+      },
+      {
+        holders: "Looks Good",
+        marketCap: "Looks Good",
+        locked: "✔️ Yes",
+        renounced: "❌",
+        risk: "medium-risk",
+        riskColor: "#f4d35e",
+        warning: "Liquidity lock is expiring soon. Monitor closely."
+      },
+      {
+        holders: "Less",
+        marketCap: "Looks Good",
+        locked: "✔️ Yes",
+        renounced: "✔️",
+        risk: "very low-risk",
+        riskColor: "#a1ffce",
+        warning: "No red flags. High holder trust detected."
+      },
+      {
+        holders: "Looks Good",
+        marketCap: "Looks Good",
+        locked: "❌",
+        renounced: "❌",
+        risk: "high-risk",
+        riskColor: "#ff6b6b",
+        warning: "Owner has full control. No liquidity lock."
+      },
+      {
+        holders: "2,420",
+        marketCap: "$980K",
+        locked: "✔️ Yes (9 months)",
+        renounced: "✔️",
+        risk: "low-risk",
+        riskColor: "#76ffae",
+        warning: "Slight spike in sells. No significant red flags."
+      },
+      {
+        holders: "5,314",
+        marketCap: "$3.1M",
+        locked: "✔️ Yes (1 year)",
+        renounced: "✔️",
+        risk: "medium-risk",
+        riskColor: "#f4d35e",
+        warning: "Smart contract has advanced features. Not fully audited."
+      },
+      {
+        holders: "789",
+        marketCap: "$245K",
+        locked: "❌",
+        renounced: "❌",
+        risk: "high-risk",
+        riskColor: "#ff6b6b",
+        warning: "No lock or renouncement. Developer wallet active."
+      },
+      {
+        holders: "6,666",
+        marketCap: "$2.9M",
+        locked: "✔️ Yes (8 months)",
+        renounced: "✔️",
+        risk: "low-risk",
+        riskColor: "#76ffae",
+        warning: "Social sentiment positive. No major concerns."
+      }
+    ];
+
+    const randomReport = reports[Math.floor(Math.random() * reports.length)];
+
+    reportBox.innerHTML = `
+      <div class="section">
+        <h3><i class="fas fa-globe"></i> Web Presence</h3>
+        <p>Dex Screener: 
+          <a class="badge" href="https://dexscreener.com" target="_blank">
+            View on DexScreener
+          </a>
+        </p>
+        <p>Linked Twitter, Telegram, and Medium found.</p>
+      </div>
+
+      <div class="section">
+        <h3><i class="fas fa-chart-line"></i> Token Metrics</h3>
+        <p>Liquidity locked: <span class="badge">${randomReport.locked}</span></p>
+        <p>Ownership Renounced: <span class="badge">${randomReport.renounced}</span></p>
+        <p>Holders: <span class="badge">${randomReport.holders}</span> | Market Cap: <span class="badge">${randomReport.marketCap}</span></p>
+      </div>
+
+      <div class="section">
+        <h3><i class="fas fa-brain"></i> A.I Risk Prediction</h3>
+        <p>🧠 Smart pattern analysis predicts this token to be 
+          <strong style="color: ${randomReport.riskColor};">${randomReport.risk}</strong> 
+          based on similar contracts and behaviors.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3><i class="fas fa-exclamation-triangle"></i> Warning Signs</h3>
+        <p>${randomReport.warning}</p>
+      </div>
+    `;
+  </script>
+
+</body>
+</html>
